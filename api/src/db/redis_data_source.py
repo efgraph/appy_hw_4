@@ -9,9 +9,9 @@ class RedisDataSource:
     def put_token_to_cache(self, username, token, prefix, expire):
         self.redis.set(f"{prefix}:{username}", token, ex=expire)
 
-    def exists_token_in_cache(self, username, prefix) -> bool:
-        res = self.redis.exists(f'{prefix}:{username}')
-        return res
+    def exists_token_in_cache(self, token, username, prefix) -> bool:
+        stored_token = self.redis.get(f'{prefix}:{username}')
+        return token == stored_token
 
     def delete_token_from_cache(self, username, prefix):
         self.redis.delete(f'{prefix}:{username}')
