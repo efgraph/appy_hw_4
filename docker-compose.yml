@@ -18,6 +18,7 @@ services:
   api:
     container_name: api
     image: api_image
+    restart: always
     env_file:
       - ./docker/app-variables.env
     build: ./api
@@ -30,6 +31,7 @@ services:
   postgres:
     container_name: postgres
     hostname: postgres
+    restart: always
     image: library/postgres:14.1
     env_file:
       - ./docker/app-variables.env
@@ -38,6 +40,7 @@ services:
     image: redis:6.2-alpine
     hostname: redis
     container_name: redis
+    restart: always
     command:
       - 'redis-server'
 
