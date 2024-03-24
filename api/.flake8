@@ -1,0 +1,6 @@
+[flake8]
+ignore = W293
+max-line-length = 130
+exclude =
+    alembic
+    __pycache__
