@@ -37,7 +37,7 @@ http://localhost/docs
 
 ### Ссылка на репозиторий
 
-https://github.com/efgraph/devops_hw_1
+https://github.com/efgraph/appy_hw_4
 
 __ФИО:__ _Спиридонов Д В (специальность МОВС)_
 
