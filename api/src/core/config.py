@@ -52,17 +52,10 @@ class JWTSettings(BaseSettings):
     access_token_expire_minites: int = 15
 
 
-class WSGISettings(BaseSettings):
-    host: str = 'localhost'
-    port: int = 5000
-    workers: int = 4
-
-
 class Settings(BaseSettings):
     db: DatabaseSettings = DatabaseSettings()
     redis: RedisSettings = RedisSettings()
     jwt: JWTSettings = JWTSettings()
-    wsgi: WSGISettings = WSGISettings()
 
 
 settings = Settings()

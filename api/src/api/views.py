@@ -12,13 +12,13 @@ from service.img_service import ImageService
 router = APIRouter()
 
 
-@router.post('/login/')
+@router.post('/login')
 async def login(form_data: AuthUser, auth_service: AuthService = Depends(get_auth_service)):
     tokens = await auth_service.authenticate_user(form_data)
     return tokens
 
 
-@router.post('/signup/')
+@router.post('/signup')
 async def signup(form_data: SignUpUser, auth_service: AuthService = Depends(get_auth_service)):
     user = await auth_service.signup_user(form_data)
     return user
